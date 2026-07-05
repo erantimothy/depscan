@@ -2,7 +2,9 @@
 package domain
 
 import (
+	"context"
 	"errors"
+	"time"
 )
 
 var (
@@ -21,4 +23,26 @@ type Module struct {
 	Path         string       `json:"path"`
 	GoVersion    string       `json:"goVersion"`
 	Dependencies []Dependency `json:"dependencies"`
+}
+
+type ScanResult struct {
+	ID        string
+	RootPath  string
+	Modules   []Module
+	StartedAt time.Time
+	Duration  time.Duration
+}
+
+type Parser interface {
+	Parse(content []byte) (Module, error)
+}
+
+type Scanner interface {
+	Scan(ctx context.Context, rootPath string) (ScanResult, error)
+}
+
+type Store interface {
+	Save(ctx context.Context, result ScanResult) error
+	Get(ctx context.Context, id string) (ScanResult, error)
+	List(ctx context.Context) ([]ScanResult, error)
 }
