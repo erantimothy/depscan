@@ -4,6 +4,7 @@ package store
 import (
 	"context"
 	"fmt"
+	"sort"
 	"sync"
 
 	"github.com/erantimothy/depscan/internal/domain"
@@ -46,5 +47,6 @@ func (m *MemoryStore) List(_ context.Context) ([]domain.ScanResult, error) {
 	for _, r := range m.results {
 		out = append(out, r)
 	}
+	sort.Slice(out, func(i, j int) bool { return out[i].StartedAt.Before(out[j].StartedAt) })
 	return out, nil
 }

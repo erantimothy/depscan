@@ -1,4 +1,4 @@
-// Package scanner walks a directory tree, finds every go.mod file, and parses them cocurrently using a bounded worker pool.
+// Package scanner walks a directory tree, finds every go.mod file, and parses them concurrently using a bounded worker pool.
 package scanner
 
 import (
@@ -9,8 +9,11 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"sort"
+	"sync"
 	"time"
 
+	"github.com/erantimothy/depscan/internal/analysis"
 	"github.com/erantimothy/depscan/internal/domain"
 )
 
@@ -52,60 +55,63 @@ func (s *Scanner) Scan(ctx context.Context, rootPath string) (domain.ScanResult,
 	}
 	start := time.Now()
 
-	jobs := make(chan job)
-	results := make(chan result)
-
-	go func() {
-		defer close(jobs)
-		_ = filepath.WalkDir(rootPath, func(path string, d fs.DirEntry, err error) error {
-			if err != nil {
-				return err
-			}
-			if d.IsDir() && d.Name() == "vendor" {
-				return filepath.SkipDir
-			}
-			if !d.IsDir() && d.Name() == "go.mod" {
-				select {
-				case jobs <- job{path: path}:
-				case <-ctx.Done():
-					return ctx.Err()
-				}
-			}
-			return nil
-		})
-	}()
-
-	var pending = make(chan struct{}, s.maxWorkers)
-	go func() {
-		defer close(results)
-		done := make(chan struct{})
-		activeWorkers := 0
-
-		for j := range jobs {
-			pending <- struct{}{}
-			activeWorkers++
-			go func(j job) {
-				defer func() {
-					<-pending
-					done <- struct{}{}
-				}()
-				results <- s.parseOne(j)
-			}(j)
-		}
-		for i := 0; i < activeWorkers; i++ {
-			<-done
-		}
-	}()
-
 	res := domain.ScanResult{
 		ID:        newScanID(),
 		RootPath:  rootPath,
 		StartedAt: start,
 	}
+	var paths []string
+	err := filepath.WalkDir(rootPath, func(path string, d fs.DirEntry, walkErr error) error {
+		if walkErr != nil {
+			return walkErr
+		}
+		if err := ctx.Err(); err != nil {
+			return err
+		}
+		if d.IsDir() && (d.Name() == "vendor" || d.Name() == ".git") {
+			return filepath.SkipDir
+		}
+		if !d.IsDir() && d.Name() == "go.mod" {
+			paths = append(paths, path)
+		}
+		return nil
+	})
+	if err != nil {
+		return res, fmt.Errorf("walking %s: %w", rootPath, err)
+	}
+	if len(paths) == 0 {
+		return res, domain.ErrNoModules
+	}
+	sort.Strings(paths)
+
+	jobs := make(chan job)
+	results := make(chan result, len(paths))
+	var workers sync.WaitGroup
+	for i := 0; i < s.maxWorkers; i++ {
+		workers.Add(1)
+		go func() {
+			defer workers.Done()
+			for j := range jobs {
+				results <- s.parseOne(rootPath, j)
+			}
+		}()
+	}
+	go func() {
+		defer close(jobs)
+		for _, path := range paths {
+			select {
+			case jobs <- job{path: path}:
+			case <-ctx.Done():
+				return
+			}
+		}
+	}()
+	workers.Wait()
+	close(results)
 
 	for r := range results {
 		if r.err != nil {
-			continue
+			return res, r.err
 		}
 		res.Modules = append(res.Modules, r.module)
 	}
@@ -115,10 +121,11 @@ func (s *Scanner) Scan(ctx context.Context, rootPath string) (domain.ScanResult,
 	}
 
 	res.Duration = time.Since(start)
+	analysis.Enrich(&res)
 	return res, nil
 }
 
-func (s *Scanner) parseOne(j job) result {
+func (s *Scanner) parseOne(rootPath string, j job) result {
 	content, err := os.ReadFile(j.path)
 	if err != nil {
 		return result{err: fmt.Errorf("reading %s: %w", j.path, err)}
@@ -127,6 +134,14 @@ func (s *Scanner) parseOne(j job) result {
 	if err != nil {
 		return result{err: fmt.Errorf("parsing %s: %w", j.path, err)}
 	}
+	dir, err := filepath.Rel(rootPath, filepath.Dir(j.path))
+	if err != nil {
+		return result{err: fmt.Errorf("getting module directory for %s: %w", j.path, err)}
+	}
+	if dir == "." {
+		dir = ""
+	}
+	mod.Directory = dir
 	return result{module: mod}
 }
 
