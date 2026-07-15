@@ -1,0 +1,2148 @@
+{
+  "id": "33fb5b2b3a8352ec",
+  "rootPath": "/home/mugiwara-timoshii/projects/agent-manager",
+  "modules": [
+    {
+      "id": "495aae3875058c96",
+      "path": "github.com/wso2/agent-manager/agent-manager-service",
+      "goVersion": "1.25.7",
+      "directory": "agent-manager-service",
+      "dependencies": [
+        {
+          "id": "c1e5bc023fbb5fed",
+          "path": "github.com/apapsch/go-jsonmerge/v2",
+          "version": "v2.0.0",
+          "indirect": true
+        },
+        {
+          "id": "451895b7dd6dcc91",
+          "path": "github.com/cenkalti/backoff/v4",
+          "version": "v4.3.0",
+          "indirect": true
+        },
+        {
+          "id": "b2014de7597cd756",
+          "path": "github.com/davecgh/go-spew",
+          "version": "v1.1.2-0.20180830191138-d8f796af33cc",
+          "indirect": true
+        },
+        {
+          "id": "ffbe6b05b60deee4",
+          "path": "github.com/fxamacker/cbor/v2",
+          "version": "v2.9.0",
+          "indirect": true
+        },
+        {
+          "id": "f41bf178c80d897d",
+          "path": "github.com/go-gormigrate/gormigrate/v2",
+          "version": "v2.1.5",
+          "indirect": false
+        },
+        {
+          "id": "8b784f5751cf23ac",
+          "path": "github.com/go-jose/go-jose/v4",
+          "version": "v4.1.4",
+          "indirect": true
+        },
+        {
+          "id": "885bca094f76030a",
+          "path": "github.com/go-logr/logr",
+          "version": "v1.4.3",
+          "indirect": true
+        },
+        {
+          "id": "fadb7fbc1c2cc857",
+          "path": "github.com/golang-jwt/jwt/v5",
+          "version": "v5.3.1",
+          "indirect": false
+        },
+        {
+          "id": "3e7805f1c431ab27",
+          "path": "github.com/google/jsonschema-go",
+          "version": "v0.4.2",
+          "indirect": true
+        },
+        {
+          "id": "e3d1b8d67b1eb197",
+          "path": "github.com/google/uuid",
+          "version": "v1.6.0",
+          "indirect": false
+        },
+        {
+          "id": "525791e3060d7329",
+          "path": "github.com/google/wire",
+          "version": "v0.7.0",
+          "indirect": false
+        },
+        {
+          "id": "d197b30087d6d74f",
+          "path": "github.com/gorilla/websocket",
+          "version": "v1.5.3",
+          "indirect": false,
+          "tags": [
+            "websocket"
+          ],
+          "category": "websocket",
+          "reason": "WebSocket support"
+        },
+        {
+          "id": "162eecc2e1dfb208",
+          "path": "github.com/hashicorp/errwrap",
+          "version": "v1.1.0",
+          "indirect": true
+        },
+        {
+          "id": "2b0958a53c54fe1b",
+          "path": "github.com/hashicorp/go-cleanhttp",
+          "version": "v0.5.2",
+          "indirect": true
+        },
+        {
+          "id": "8b14592a1893fd94",
+          "path": "github.com/hashicorp/go-multierror",
+          "version": "v1.1.1",
+          "indirect": true
+        },
+        {
+          "id": "3f072250814cf61a",
+          "path": "github.com/hashicorp/go-retryablehttp",
+          "version": "v0.7.8",
+          "indirect": true
+        },
+        {
+          "id": "6250ca933311f1f2",
+          "path": "github.com/hashicorp/go-rootcerts",
+          "version": "v1.0.2",
+          "indirect": true
+        },
+        {
+          "id": "3d514945057ce775",
+          "path": "github.com/hashicorp/go-secure-stdlib/parseutil",
+          "version": "v0.2.0",
+          "indirect": true
+        },
+        {
+          "id": "ef7c300024a90d3a",
+          "path": "github.com/hashicorp/go-secure-stdlib/strutil",
+          "version": "v0.1.2",
+          "indirect": true
+        },
+        {
+          "id": "cca88f06fe27c4bd",
+          "path": "github.com/hashicorp/go-sockaddr",
+          "version": "v1.0.7",
+          "indirect": true
+        },
+        {
+          "id": "f6603c89e31d3346",
+          "path": "github.com/hashicorp/hcl",
+          "version": "v1.0.1-vault-7",
+          "indirect": true
+        },
+        {
+          "id": "e7324006d7c908ff",
+          "path": "github.com/hashicorp/vault/api",
+          "version": "v1.22.0",
+          "indirect": false,
+          "tags": [
+            "security"
+          ],
+          "category": "security",
+          "reason": "Vault client"
+        },
+        {
+          "id": "ebe262ff51197fb5",
+          "path": "github.com/jackc/pgpassfile",
+          "version": "v1.0.0",
+          "indirect": true,
+          "tags": [
+            "database"
+          ],
+          "category": "database",
+          "reason": "PostgreSQL driver"
+        },
+        {
+          "id": "89fbc89538f62c2f",
+          "path": "github.com/jackc/pgservicefile",
+          "version": "v0.0.0-20240606120523-5a60cdf6a761",
+          "indirect": true,
+          "tags": [
+            "database"
+          ],
+          "category": "database",
+          "reason": "PostgreSQL driver"
+        },
+        {
+          "id": "0bf1739ca3c4e3a8",
+          "path": "github.com/jackc/pgx/v5",
+          "version": "v5.9.2",
+          "indirect": false,
+          "tags": [
+            "database"
+          ],
+          "category": "database",
+          "reason": "PostgreSQL driver"
+        },
+        {
+          "id": "48261ec2a5ed86ae",
+          "path": "github.com/jackc/puddle/v2",
+          "version": "v2.2.2",
+          "indirect": true,
+          "tags": [
+            "database"
+          ],
+          "category": "database",
+          "reason": "PostgreSQL driver"
+        },
+        {
+          "id": "3b426b37f56a769b",
+          "path": "github.com/jinzhu/inflection",
+          "version": "v1.0.0",
+          "indirect": true
+        },
+        {
+          "id": "66a09261c6556d3c",
+          "path": "github.com/jinzhu/now",
+          "version": "v1.1.5",
+          "indirect": true
+        },
+        {
+          "id": "8d26b89d45955ed5",
+          "path": "github.com/joho/godotenv",
+          "version": "v1.4.0",
+          "indirect": false
+        },
+        {
+          "id": "93dd3702505f5e7c",
+          "path": "github.com/json-iterator/go",
+          "version": "v1.1.12",
+          "indirect": true
+        },
+        {
+          "id": "4d4850697b8bba79",
+          "path": "github.com/kr/pretty",
+          "version": "v0.3.1",
+          "indirect": true
+        },
+        {
+          "id": "271949261fe8fa6f",
+          "path": "github.com/mitchellh/go-homedir",
+          "version": "v1.1.0",
+          "indirect": true
+        },
+        {
+          "id": "d781fb0c2acd931d",
+          "path": "github.com/mitchellh/mapstructure",
+          "version": "v1.5.0",
+          "indirect": true
+        },
+        {
+          "id": "88db485ab4ed72e5",
+          "path": "github.com/modelcontextprotocol/go-sdk",
+          "version": "v1.5.0",
+          "indirect": false
+        },
+        {
+          "id": "108eec1c609bc7ae",
+          "path": "github.com/modern-go/concurrent",
+          "version": "v0.0.0-20180306012644-bacd9c7ef1dd",
+          "indirect": true
+        },
+        {
+          "id": "c9ece6f8a2178d5a",
+          "path": "github.com/modern-go/reflect2",
+          "version": "v1.0.3-0.20250322232337-35a7c28c31ee",
+          "indirect": true
+        },
+        {
+          "id": "3def82f35f22fde3",
+          "path": "github.com/oapi-codegen/runtime",
+          "version": "v1.1.2",
+          "indirect": false
+        },
+        {
+          "id": "db2864673aec272d",
+          "path": "github.com/pmezard/go-difflib",
+          "version": "v1.0.1-0.20181226105442-5d4384ee4fb2",
+          "indirect": true
+        },
+        {
+          "id": "005db060f0491bba",
+          "path": "github.com/ryanuber/go-glob",
+          "version": "v1.0.0",
+          "indirect": true
+        },
+        {
+          "id": "81e981cdccefecfa",
+          "path": "github.com/segmentio/asm",
+          "version": "v1.1.3",
+          "indirect": true
+        },
+        {
+          "id": "789d537cbf03cb37",
+          "path": "github.com/segmentio/encoding",
+          "version": "v0.5.4",
+          "indirect": true
+        },
+        {
+          "id": "b75f44074730e8f2",
+          "path": "github.com/stretchr/objx",
+          "version": "v0.5.2",
+          "indirect": true
+        },
+        {
+          "id": "ae000d1d3f7131d5",
+          "path": "github.com/stretchr/testify",
+          "version": "v1.11.1",
+          "indirect": false,
+          "tags": [
+            "testing"
+          ],
+          "category": "testing",
+          "reason": "Test assertions"
+        },
+        {
+          "id": "f592c0e52eba0c45",
+          "path": "github.com/x448/float16",
+          "version": "v0.8.4",
+          "indirect": true
+        },
+        {
+          "id": "25d9ee4951172e0c",
+          "path": "github.com/yosida95/uritemplate/v3",
+          "version": "v3.0.2",
+          "indirect": true
+        },
+        {
+          "id": "d0a656d58e5871bc",
+          "path": "go.uber.org/automaxprocs",
+          "version": "v1.6.0",
+          "indirect": false
+        },
+        {
+          "id": "3d50e804b92e3b0f",
+          "path": "go.yaml.in/yaml/v2",
+          "version": "v2.4.3",
+          "indirect": true
+        },
+        {
+          "id": "5e582e1bc90e8aa4",
+          "path": "golang.org/x/crypto",
+          "version": "v0.48.0",
+          "indirect": false
+        },
+        {
+          "id": "706de18805df1ec1",
+          "path": "golang.org/x/net",
+          "version": "v0.49.0",
+          "indirect": true
+        },
+        {
+          "id": "e36452aef34de4ce",
+          "path": "golang.org/x/oauth2",
+          "version": "v0.35.0",
+          "indirect": true,
+          "tags": [
+            "auth"
+          ],
+          "category": "auth",
+          "reason": "OAuth 2.0"
+        },
+        {
+          "id": "02dce6129348f16c",
+          "path": "golang.org/x/sync",
+          "version": "v0.19.0",
+          "indirect": false
+        },
+        {
+          "id": "b79f795910355d1d",
+          "path": "golang.org/x/sys",
+          "version": "v0.41.0",
+          "indirect": true
+        },
+        {
+          "id": "26ef594549bf4334",
+          "path": "golang.org/x/text",
+          "version": "v0.34.0",
+          "indirect": true
+        },
+        {
+          "id": "451dd8b0e13072aa",
+          "path": "golang.org/x/time",
+          "version": "v0.12.0",
+          "indirect": true
+        },
+        {
+          "id": "43df7dbd284085f8",
+          "path": "gopkg.in/inf.v0",
+          "version": "v0.9.1",
+          "indirect": true
+        },
+        {
+          "id": "7e09a7e9d736353a",
+          "path": "gopkg.in/yaml.v3",
+          "version": "v3.0.1",
+          "indirect": false
+        },
+        {
+          "id": "ac1703d72a97eaea",
+          "path": "gorm.io/driver/postgres",
+          "version": "v1.6.0",
+          "indirect": false,
+          "tags": [
+            "database"
+          ],
+          "category": "database",
+          "reason": "ORM"
+        },
+        {
+          "id": "25b3bc9542143eac",
+          "path": "gorm.io/gorm",
+          "version": "v1.31.0",
+          "indirect": false,
+          "tags": [
+            "database"
+          ],
+          "category": "database",
+          "reason": "ORM"
+        },
+        {
+          "id": "b57dbac06bf2fc56",
+          "path": "k8s.io/apimachinery",
+          "version": "v0.35.1",
+          "indirect": false,
+          "tags": [
+            "kubernetes"
+          ],
+          "category": "kubernetes",
+          "reason": "Kubernetes client"
+        },
+        {
+          "id": "ce2f031c8d8c21fa",
+          "path": "k8s.io/klog/v2",
+          "version": "v2.130.1",
+          "indirect": true,
+          "tags": [
+            "kubernetes"
+          ],
+          "category": "kubernetes",
+          "reason": "Kubernetes client"
+        },
+        {
+          "id": "0d9f40869e18a6b3",
+          "path": "k8s.io/kube-openapi",
+          "version": "v0.0.0-20250910181357-589584f1c912",
+          "indirect": true,
+          "tags": [
+            "kubernetes"
+          ],
+          "category": "kubernetes",
+          "reason": "Kubernetes client"
+        },
+        {
+          "id": "fa7b041842ef8fab",
+          "path": "k8s.io/utils",
+          "version": "v0.0.0-20251002143259-bc988d571ff4",
+          "indirect": true,
+          "tags": [
+            "kubernetes"
+          ],
+          "category": "kubernetes",
+          "reason": "Kubernetes client"
+        },
+        {
+          "id": "95c106b8e7d00407",
+          "path": "sigs.k8s.io/json",
+          "version": "v0.0.0-20250730193827-2d320260d730",
+          "indirect": true
+        },
+        {
+          "id": "29dd83f0421f0a13",
+          "path": "sigs.k8s.io/randfill",
+          "version": "v1.0.0",
+          "indirect": true
+        },
+        {
+          "id": "f86b458859302596",
+          "path": "sigs.k8s.io/structured-merge-diff/v6",
+          "version": "v6.3.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "id": "5741b326d19f9a76",
+      "path": "github.com/wso2/agent-manager/cli",
+      "goVersion": "1.25.7",
+      "directory": "cli",
+      "dependencies": [
+        {
+          "id": "209cf1e43ecc4821",
+          "path": "github.com/apapsch/go-jsonmerge/v2",
+          "version": "v2.0.0",
+          "indirect": true
+        },
+        {
+          "id": "35650cef99a56df4",
+          "path": "github.com/google/uuid",
+          "version": "v1.6.0",
+          "indirect": false
+        },
+        {
+          "id": "8dde0505edfa6fff",
+          "path": "github.com/inconshreveable/mousetrap",
+          "version": "v1.1.0",
+          "indirect": true
+        },
+        {
+          "id": "07fb8c4b53e69241",
+          "path": "github.com/oapi-codegen/runtime",
+          "version": "v1.4.0",
+          "indirect": false
+        },
+        {
+          "id": "c1c8761dbeb0cd57",
+          "path": "github.com/spf13/cobra",
+          "version": "v1.10.2",
+          "indirect": false
+        },
+        {
+          "id": "de07d367e2e3f444",
+          "path": "github.com/spf13/pflag",
+          "version": "v1.0.9",
+          "indirect": false
+        },
+        {
+          "id": "d3a1c3a269c2554c",
+          "path": "golang.org/x/oauth2",
+          "version": "v0.36.0",
+          "indirect": false,
+          "tags": [
+            "auth"
+          ],
+          "category": "auth",
+          "reason": "OAuth 2.0"
+        },
+        {
+          "id": "c752ca8cb8beb2f4",
+          "path": "golang.org/x/sys",
+          "version": "v0.43.0",
+          "indirect": true
+        },
+        {
+          "id": "20477c897c05ec6f",
+          "path": "golang.org/x/term",
+          "version": "v0.42.0",
+          "indirect": false
+        },
+        {
+          "id": "cd54a5020c0fe2f1",
+          "path": "gopkg.in/yaml.v3",
+          "version": "v3.0.1",
+          "indirect": false
+        }
+      ]
+    },
+    {
+      "id": "cb195295f7b68222",
+      "path": "github.com/wso2/agent-manager/test/e2e",
+      "goVersion": "1.25.7",
+      "directory": "test/e2e",
+      "dependencies": [
+        {
+          "id": "d81acb4a5ebde51f",
+          "path": "github.com/Masterminds/semver/v3",
+          "version": "v3.4.0",
+          "indirect": true
+        },
+        {
+          "id": "167b4767cff6105c",
+          "path": "github.com/go-logr/logr",
+          "version": "v1.4.3",
+          "indirect": true
+        },
+        {
+          "id": "726ae0846330da1a",
+          "path": "github.com/go-task/slim-sprig/v3",
+          "version": "v3.0.0",
+          "indirect": true
+        },
+        {
+          "id": "1f7ca046a0ac7210",
+          "path": "github.com/google/go-cmp",
+          "version": "v0.7.0",
+          "indirect": true
+        },
+        {
+          "id": "e21005c0a2952fa8",
+          "path": "github.com/google/pprof",
+          "version": "v0.0.0-20260402051712-545e8a4df936",
+          "indirect": true
+        },
+        {
+          "id": "75e7cb1eb39302f6",
+          "path": "github.com/google/uuid",
+          "version": "v1.6.0",
+          "indirect": false
+        },
+        {
+          "id": "b8f024d6f2a1ff23",
+          "path": "github.com/onsi/ginkgo/v2",
+          "version": "v2.28.3",
+          "indirect": false
+        },
+        {
+          "id": "d9282b384420143b",
+          "path": "github.com/onsi/gomega",
+          "version": "v1.40.0",
+          "indirect": false
+        },
+        {
+          "id": "7ac69b375edaa288",
+          "path": "github.com/stretchr/testify",
+          "version": "v1.11.1",
+          "indirect": true,
+          "tags": [
+            "testing"
+          ],
+          "category": "testing",
+          "reason": "Test assertions"
+        },
+        {
+          "id": "0d2f36cc9eb3e0fb",
+          "path": "go.yaml.in/yaml/v3",
+          "version": "v3.0.4",
+          "indirect": true
+        },
+        {
+          "id": "1c0416abaceddf92",
+          "path": "golang.org/x/mod",
+          "version": "v0.35.0",
+          "indirect": true
+        },
+        {
+          "id": "4afeb0faa20db055",
+          "path": "golang.org/x/net",
+          "version": "v0.53.0",
+          "indirect": true
+        },
+        {
+          "id": "f884482f39d58d45",
+          "path": "golang.org/x/sync",
+          "version": "v0.20.0",
+          "indirect": true
+        },
+        {
+          "id": "dbefeddda798f10a",
+          "path": "golang.org/x/sys",
+          "version": "v0.43.0",
+          "indirect": true
+        },
+        {
+          "id": "77280ae75efa0c42",
+          "path": "golang.org/x/text",
+          "version": "v0.36.0",
+          "indirect": true
+        },
+        {
+          "id": "614e0db2d7e1142b",
+          "path": "golang.org/x/tools",
+          "version": "v0.44.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "id": "0ae32300785e164f",
+      "path": "github.com/wso2/agent-manager/traces-observer-service",
+      "goVersion": "1.25.0",
+      "directory": "traces-observer-service",
+      "dependencies": [
+        {
+          "id": "3d116f7905e70d04",
+          "path": "github.com/golang-jwt/jwt/v5",
+          "version": "v5.3.1",
+          "indirect": false
+        }
+      ]
+    }
+  ],
+  "startedAt": "2026-07-16T00:35:59.973117724+05:30",
+  "duration": 6774075,
+  "statistics": {
+    "moduleCount": 4,
+    "directDependencies": 29,
+    "indirectDependencies": 63,
+    "uniqueDependencies": 78
+  },
+  "moduleSummaries": [
+    {
+      "moduleId": "495aae3875058c96",
+      "module": "github.com/wso2/agent-manager/agent-manager-service",
+      "goVersion": "1.25.7",
+      "directCount": 18,
+      "indirectCount": 47,
+      "frameworks": [
+        "GORM",
+        "Kubernetes",
+        "MCP SDK",
+        "Vault"
+      ],
+      "externalSystems": [
+        "Database",
+        "Kubernetes",
+        "OAuth",
+        "PostgreSQL",
+        "Vault"
+      ]
+    },
+    {
+      "moduleId": "5741b326d19f9a76",
+      "module": "github.com/wso2/agent-manager/cli",
+      "goVersion": "1.25.7",
+      "directCount": 7,
+      "indirectCount": 3,
+      "externalSystems": [
+        "OAuth"
+      ]
+    },
+    {
+      "moduleId": "cb195295f7b68222",
+      "module": "github.com/wso2/agent-manager/test/e2e",
+      "goVersion": "1.25.7",
+      "directCount": 3,
+      "indirectCount": 13
+    },
+    {
+      "moduleId": "0ae32300785e164f",
+      "module": "github.com/wso2/agent-manager/traces-observer-service",
+      "goVersion": "1.25.0",
+      "directCount": 1,
+      "indirectCount": 0
+    }
+  ],
+  "sharedDependencies": [
+    {
+      "path": "github.com/apapsch/go-jsonmerge/v2",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v2.0.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v2.0.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "github.com/go-logr/logr",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v1.4.3",
+          "indirect": true
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v1.4.3",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "github.com/golang-jwt/jwt/v5",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v5.3.1",
+          "indirect": false
+        },
+        {
+          "moduleId": "0ae32300785e164f",
+          "module": "github.com/wso2/agent-manager/traces-observer-service",
+          "version": "v5.3.1",
+          "indirect": false
+        }
+      ]
+    },
+    {
+      "path": "github.com/google/uuid",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v1.6.0",
+          "indirect": false
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v1.6.0",
+          "indirect": false
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v1.6.0",
+          "indirect": false
+        }
+      ]
+    },
+    {
+      "path": "github.com/oapi-codegen/runtime",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v1.1.2",
+          "indirect": false
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v1.4.0",
+          "indirect": false
+        }
+      ]
+    },
+    {
+      "path": "github.com/stretchr/testify",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v1.11.1",
+          "indirect": false
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v1.11.1",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/net",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.49.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v0.53.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/oauth2",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.35.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v0.36.0",
+          "indirect": false
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/sync",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.19.0",
+          "indirect": false
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v0.20.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/sys",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.41.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v0.43.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v0.43.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/text",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.34.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v0.36.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "gopkg.in/yaml.v3",
+      "uses": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v3.0.1",
+          "indirect": false
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v3.0.1",
+          "indirect": false
+        }
+      ]
+    }
+  ],
+  "versionConflicts": [
+    {
+      "path": "github.com/oapi-codegen/runtime",
+      "versions": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v1.1.2",
+          "indirect": false
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v1.4.0",
+          "indirect": false
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/net",
+      "versions": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.49.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v0.53.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/oauth2",
+      "versions": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.35.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v0.36.0",
+          "indirect": false
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/sync",
+      "versions": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.19.0",
+          "indirect": false
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v0.20.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/sys",
+      "versions": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.41.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "5741b326d19f9a76",
+          "module": "github.com/wso2/agent-manager/cli",
+          "version": "v0.43.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v0.43.0",
+          "indirect": true
+        }
+      ]
+    },
+    {
+      "path": "golang.org/x/text",
+      "versions": [
+        {
+          "moduleId": "495aae3875058c96",
+          "module": "github.com/wso2/agent-manager/agent-manager-service",
+          "version": "v0.34.0",
+          "indirect": true
+        },
+        {
+          "moduleId": "cb195295f7b68222",
+          "module": "github.com/wso2/agent-manager/test/e2e",
+          "version": "v0.36.0",
+          "indirect": true
+        }
+      ]
+    }
+  ],
+  "ecosystems": [
+    {
+      "name": "GORM",
+      "dependencies": [
+        "gorm.io/driver/postgres",
+        "gorm.io/gorm"
+      ],
+      "modules": [
+        "github.com/wso2/agent-manager/agent-manager-service"
+      ]
+    },
+    {
+      "name": "HashiCorp",
+      "dependencies": [
+        "github.com/hashicorp/errwrap",
+        "github.com/hashicorp/go-cleanhttp",
+        "github.com/hashicorp/go-multierror",
+        "github.com/hashicorp/go-retryablehttp",
+        "github.com/hashicorp/go-rootcerts",
+        "github.com/hashicorp/go-secure-stdlib/parseutil",
+        "github.com/hashicorp/go-secure-stdlib/strutil",
+        "github.com/hashicorp/go-sockaddr",
+        "github.com/hashicorp/hcl",
+        "github.com/hashicorp/vault/api"
+      ],
+      "modules": [
+        "github.com/wso2/agent-manager/agent-manager-service"
+      ]
+    },
+    {
+      "name": "Kubernetes",
+      "dependencies": [
+        "k8s.io/apimachinery",
+        "k8s.io/klog/v2",
+        "k8s.io/kube-openapi",
+        "k8s.io/utils"
+      ],
+      "modules": [
+        "github.com/wso2/agent-manager/agent-manager-service"
+      ]
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "495aae3875058c96",
+        "type": "module",
+        "label": "github.com/wso2/agent-manager/agent-manager-service"
+      },
+      {
+        "id": "c1e5bc023fbb5fed",
+        "type": "dependency",
+        "label": "github.com/apapsch/go-jsonmerge/v2",
+        "version": "v2.0.0"
+      },
+      {
+        "id": "451895b7dd6dcc91",
+        "type": "dependency",
+        "label": "github.com/cenkalti/backoff/v4",
+        "version": "v4.3.0"
+      },
+      {
+        "id": "b2014de7597cd756",
+        "type": "dependency",
+        "label": "github.com/davecgh/go-spew",
+        "version": "v1.1.2-0.20180830191138-d8f796af33cc"
+      },
+      {
+        "id": "ffbe6b05b60deee4",
+        "type": "dependency",
+        "label": "github.com/fxamacker/cbor/v2",
+        "version": "v2.9.0"
+      },
+      {
+        "id": "f41bf178c80d897d",
+        "type": "dependency",
+        "label": "github.com/go-gormigrate/gormigrate/v2",
+        "version": "v2.1.5"
+      },
+      {
+        "id": "8b784f5751cf23ac",
+        "type": "dependency",
+        "label": "github.com/go-jose/go-jose/v4",
+        "version": "v4.1.4"
+      },
+      {
+        "id": "885bca094f76030a",
+        "type": "dependency",
+        "label": "github.com/go-logr/logr",
+        "version": "v1.4.3"
+      },
+      {
+        "id": "fadb7fbc1c2cc857",
+        "type": "dependency",
+        "label": "github.com/golang-jwt/jwt/v5",
+        "version": "v5.3.1"
+      },
+      {
+        "id": "3e7805f1c431ab27",
+        "type": "dependency",
+        "label": "github.com/google/jsonschema-go",
+        "version": "v0.4.2"
+      },
+      {
+        "id": "e3d1b8d67b1eb197",
+        "type": "dependency",
+        "label": "github.com/google/uuid",
+        "version": "v1.6.0"
+      },
+      {
+        "id": "525791e3060d7329",
+        "type": "dependency",
+        "label": "github.com/google/wire",
+        "version": "v0.7.0"
+      },
+      {
+        "id": "d197b30087d6d74f",
+        "type": "dependency",
+        "label": "github.com/gorilla/websocket",
+        "version": "v1.5.3"
+      },
+      {
+        "id": "162eecc2e1dfb208",
+        "type": "dependency",
+        "label": "github.com/hashicorp/errwrap",
+        "version": "v1.1.0"
+      },
+      {
+        "id": "2b0958a53c54fe1b",
+        "type": "dependency",
+        "label": "github.com/hashicorp/go-cleanhttp",
+        "version": "v0.5.2"
+      },
+      {
+        "id": "8b14592a1893fd94",
+        "type": "dependency",
+        "label": "github.com/hashicorp/go-multierror",
+        "version": "v1.1.1"
+      },
+      {
+        "id": "3f072250814cf61a",
+        "type": "dependency",
+        "label": "github.com/hashicorp/go-retryablehttp",
+        "version": "v0.7.8"
+      },
+      {
+        "id": "6250ca933311f1f2",
+        "type": "dependency",
+        "label": "github.com/hashicorp/go-rootcerts",
+        "version": "v1.0.2"
+      },
+      {
+        "id": "3d514945057ce775",
+        "type": "dependency",
+        "label": "github.com/hashicorp/go-secure-stdlib/parseutil",
+        "version": "v0.2.0"
+      },
+      {
+        "id": "ef7c300024a90d3a",
+        "type": "dependency",
+        "label": "github.com/hashicorp/go-secure-stdlib/strutil",
+        "version": "v0.1.2"
+      },
+      {
+        "id": "cca88f06fe27c4bd",
+        "type": "dependency",
+        "label": "github.com/hashicorp/go-sockaddr",
+        "version": "v1.0.7"
+      },
+      {
+        "id": "f6603c89e31d3346",
+        "type": "dependency",
+        "label": "github.com/hashicorp/hcl",
+        "version": "v1.0.1-vault-7"
+      },
+      {
+        "id": "e7324006d7c908ff",
+        "type": "dependency",
+        "label": "github.com/hashicorp/vault/api",
+        "version": "v1.22.0"
+      },
+      {
+        "id": "ebe262ff51197fb5",
+        "type": "dependency",
+        "label": "github.com/jackc/pgpassfile",
+        "version": "v1.0.0"
+      },
+      {
+        "id": "89fbc89538f62c2f",
+        "type": "dependency",
+        "label": "github.com/jackc/pgservicefile",
+        "version": "v0.0.0-20240606120523-5a60cdf6a761"
+      },
+      {
+        "id": "0bf1739ca3c4e3a8",
+        "type": "dependency",
+        "label": "github.com/jackc/pgx/v5",
+        "version": "v5.9.2"
+      },
+      {
+        "id": "48261ec2a5ed86ae",
+        "type": "dependency",
+        "label": "github.com/jackc/puddle/v2",
+        "version": "v2.2.2"
+      },
+      {
+        "id": "3b426b37f56a769b",
+        "type": "dependency",
+        "label": "github.com/jinzhu/inflection",
+        "version": "v1.0.0"
+      },
+      {
+        "id": "66a09261c6556d3c",
+        "type": "dependency",
+        "label": "github.com/jinzhu/now",
+        "version": "v1.1.5"
+      },
+      {
+        "id": "8d26b89d45955ed5",
+        "type": "dependency",
+        "label": "github.com/joho/godotenv",
+        "version": "v1.4.0"
+      },
+      {
+        "id": "93dd3702505f5e7c",
+        "type": "dependency",
+        "label": "github.com/json-iterator/go",
+        "version": "v1.1.12"
+      },
+      {
+        "id": "4d4850697b8bba79",
+        "type": "dependency",
+        "label": "github.com/kr/pretty",
+        "version": "v0.3.1"
+      },
+      {
+        "id": "271949261fe8fa6f",
+        "type": "dependency",
+        "label": "github.com/mitchellh/go-homedir",
+        "version": "v1.1.0"
+      },
+      {
+        "id": "d781fb0c2acd931d",
+        "type": "dependency",
+        "label": "github.com/mitchellh/mapstructure",
+        "version": "v1.5.0"
+      },
+      {
+        "id": "88db485ab4ed72e5",
+        "type": "dependency",
+        "label": "github.com/modelcontextprotocol/go-sdk",
+        "version": "v1.5.0"
+      },
+      {
+        "id": "108eec1c609bc7ae",
+        "type": "dependency",
+        "label": "github.com/modern-go/concurrent",
+        "version": "v0.0.0-20180306012644-bacd9c7ef1dd"
+      },
+      {
+        "id": "c9ece6f8a2178d5a",
+        "type": "dependency",
+        "label": "github.com/modern-go/reflect2",
+        "version": "v1.0.3-0.20250322232337-35a7c28c31ee"
+      },
+      {
+        "id": "3def82f35f22fde3",
+        "type": "dependency",
+        "label": "github.com/oapi-codegen/runtime",
+        "version": "v1.1.2"
+      },
+      {
+        "id": "db2864673aec272d",
+        "type": "dependency",
+        "label": "github.com/pmezard/go-difflib",
+        "version": "v1.0.1-0.20181226105442-5d4384ee4fb2"
+      },
+      {
+        "id": "005db060f0491bba",
+        "type": "dependency",
+        "label": "github.com/ryanuber/go-glob",
+        "version": "v1.0.0"
+      },
+      {
+        "id": "81e981cdccefecfa",
+        "type": "dependency",
+        "label": "github.com/segmentio/asm",
+        "version": "v1.1.3"
+      },
+      {
+        "id": "789d537cbf03cb37",
+        "type": "dependency",
+        "label": "github.com/segmentio/encoding",
+        "version": "v0.5.4"
+      },
+      {
+        "id": "b75f44074730e8f2",
+        "type": "dependency",
+        "label": "github.com/stretchr/objx",
+        "version": "v0.5.2"
+      },
+      {
+        "id": "ae000d1d3f7131d5",
+        "type": "dependency",
+        "label": "github.com/stretchr/testify",
+        "version": "v1.11.1"
+      },
+      {
+        "id": "f592c0e52eba0c45",
+        "type": "dependency",
+        "label": "github.com/x448/float16",
+        "version": "v0.8.4"
+      },
+      {
+        "id": "25d9ee4951172e0c",
+        "type": "dependency",
+        "label": "github.com/yosida95/uritemplate/v3",
+        "version": "v3.0.2"
+      },
+      {
+        "id": "d0a656d58e5871bc",
+        "type": "dependency",
+        "label": "go.uber.org/automaxprocs",
+        "version": "v1.6.0"
+      },
+      {
+        "id": "3d50e804b92e3b0f",
+        "type": "dependency",
+        "label": "go.yaml.in/yaml/v2",
+        "version": "v2.4.3"
+      },
+      {
+        "id": "5e582e1bc90e8aa4",
+        "type": "dependency",
+        "label": "golang.org/x/crypto",
+        "version": "v0.48.0"
+      },
+      {
+        "id": "706de18805df1ec1",
+        "type": "dependency",
+        "label": "golang.org/x/net",
+        "version": "v0.49.0"
+      },
+      {
+        "id": "e36452aef34de4ce",
+        "type": "dependency",
+        "label": "golang.org/x/oauth2",
+        "version": "v0.35.0"
+      },
+      {
+        "id": "02dce6129348f16c",
+        "type": "dependency",
+        "label": "golang.org/x/sync",
+        "version": "v0.19.0"
+      },
+      {
+        "id": "b79f795910355d1d",
+        "type": "dependency",
+        "label": "golang.org/x/sys",
+        "version": "v0.41.0"
+      },
+      {
+        "id": "26ef594549bf4334",
+        "type": "dependency",
+        "label": "golang.org/x/text",
+        "version": "v0.34.0"
+      },
+      {
+        "id": "451dd8b0e13072aa",
+        "type": "dependency",
+        "label": "golang.org/x/time",
+        "version": "v0.12.0"
+      },
+      {
+        "id": "43df7dbd284085f8",
+        "type": "dependency",
+        "label": "gopkg.in/inf.v0",
+        "version": "v0.9.1"
+      },
+      {
+        "id": "7e09a7e9d736353a",
+        "type": "dependency",
+        "label": "gopkg.in/yaml.v3",
+        "version": "v3.0.1"
+      },
+      {
+        "id": "ac1703d72a97eaea",
+        "type": "dependency",
+        "label": "gorm.io/driver/postgres",
+        "version": "v1.6.0"
+      },
+      {
+        "id": "25b3bc9542143eac",
+        "type": "dependency",
+        "label": "gorm.io/gorm",
+        "version": "v1.31.0"
+      },
+      {
+        "id": "b57dbac06bf2fc56",
+        "type": "dependency",
+        "label": "k8s.io/apimachinery",
+        "version": "v0.35.1"
+      },
+      {
+        "id": "ce2f031c8d8c21fa",
+        "type": "dependency",
+        "label": "k8s.io/klog/v2",
+        "version": "v2.130.1"
+      },
+      {
+        "id": "0d9f40869e18a6b3",
+        "type": "dependency",
+        "label": "k8s.io/kube-openapi",
+        "version": "v0.0.0-20250910181357-589584f1c912"
+      },
+      {
+        "id": "fa7b041842ef8fab",
+        "type": "dependency",
+        "label": "k8s.io/utils",
+        "version": "v0.0.0-20251002143259-bc988d571ff4"
+      },
+      {
+        "id": "95c106b8e7d00407",
+        "type": "dependency",
+        "label": "sigs.k8s.io/json",
+        "version": "v0.0.0-20250730193827-2d320260d730"
+      },
+      {
+        "id": "29dd83f0421f0a13",
+        "type": "dependency",
+        "label": "sigs.k8s.io/randfill",
+        "version": "v1.0.0"
+      },
+      {
+        "id": "f86b458859302596",
+        "type": "dependency",
+        "label": "sigs.k8s.io/structured-merge-diff/v6",
+        "version": "v6.3.0"
+      },
+      {
+        "id": "5741b326d19f9a76",
+        "type": "module",
+        "label": "github.com/wso2/agent-manager/cli"
+      },
+      {
+        "id": "209cf1e43ecc4821",
+        "type": "dependency",
+        "label": "github.com/apapsch/go-jsonmerge/v2",
+        "version": "v2.0.0"
+      },
+      {
+        "id": "35650cef99a56df4",
+        "type": "dependency",
+        "label": "github.com/google/uuid",
+        "version": "v1.6.0"
+      },
+      {
+        "id": "8dde0505edfa6fff",
+        "type": "dependency",
+        "label": "github.com/inconshreveable/mousetrap",
+        "version": "v1.1.0"
+      },
+      {
+        "id": "07fb8c4b53e69241",
+        "type": "dependency",
+        "label": "github.com/oapi-codegen/runtime",
+        "version": "v1.4.0"
+      },
+      {
+        "id": "c1c8761dbeb0cd57",
+        "type": "dependency",
+        "label": "github.com/spf13/cobra",
+        "version": "v1.10.2"
+      },
+      {
+        "id": "de07d367e2e3f444",
+        "type": "dependency",
+        "label": "github.com/spf13/pflag",
+        "version": "v1.0.9"
+      },
+      {
+        "id": "d3a1c3a269c2554c",
+        "type": "dependency",
+        "label": "golang.org/x/oauth2",
+        "version": "v0.36.0"
+      },
+      {
+        "id": "c752ca8cb8beb2f4",
+        "type": "dependency",
+        "label": "golang.org/x/sys",
+        "version": "v0.43.0"
+      },
+      {
+        "id": "20477c897c05ec6f",
+        "type": "dependency",
+        "label": "golang.org/x/term",
+        "version": "v0.42.0"
+      },
+      {
+        "id": "cd54a5020c0fe2f1",
+        "type": "dependency",
+        "label": "gopkg.in/yaml.v3",
+        "version": "v3.0.1"
+      },
+      {
+        "id": "cb195295f7b68222",
+        "type": "module",
+        "label": "github.com/wso2/agent-manager/test/e2e"
+      },
+      {
+        "id": "d81acb4a5ebde51f",
+        "type": "dependency",
+        "label": "github.com/Masterminds/semver/v3",
+        "version": "v3.4.0"
+      },
+      {
+        "id": "167b4767cff6105c",
+        "type": "dependency",
+        "label": "github.com/go-logr/logr",
+        "version": "v1.4.3"
+      },
+      {
+        "id": "726ae0846330da1a",
+        "type": "dependency",
+        "label": "github.com/go-task/slim-sprig/v3",
+        "version": "v3.0.0"
+      },
+      {
+        "id": "1f7ca046a0ac7210",
+        "type": "dependency",
+        "label": "github.com/google/go-cmp",
+        "version": "v0.7.0"
+      },
+      {
+        "id": "e21005c0a2952fa8",
+        "type": "dependency",
+        "label": "github.com/google/pprof",
+        "version": "v0.0.0-20260402051712-545e8a4df936"
+      },
+      {
+        "id": "75e7cb1eb39302f6",
+        "type": "dependency",
+        "label": "github.com/google/uuid",
+        "version": "v1.6.0"
+      },
+      {
+        "id": "b8f024d6f2a1ff23",
+        "type": "dependency",
+        "label": "github.com/onsi/ginkgo/v2",
+        "version": "v2.28.3"
+      },
+      {
+        "id": "d9282b384420143b",
+        "type": "dependency",
+        "label": "github.com/onsi/gomega",
+        "version": "v1.40.0"
+      },
+      {
+        "id": "7ac69b375edaa288",
+        "type": "dependency",
+        "label": "github.com/stretchr/testify",
+        "version": "v1.11.1"
+      },
+      {
+        "id": "0d2f36cc9eb3e0fb",
+        "type": "dependency",
+        "label": "go.yaml.in/yaml/v3",
+        "version": "v3.0.4"
+      },
+      {
+        "id": "1c0416abaceddf92",
+        "type": "dependency",
+        "label": "golang.org/x/mod",
+        "version": "v0.35.0"
+      },
+      {
+        "id": "4afeb0faa20db055",
+        "type": "dependency",
+        "label": "golang.org/x/net",
+        "version": "v0.53.0"
+      },
+      {
+        "id": "f884482f39d58d45",
+        "type": "dependency",
+        "label": "golang.org/x/sync",
+        "version": "v0.20.0"
+      },
+      {
+        "id": "dbefeddda798f10a",
+        "type": "dependency",
+        "label": "golang.org/x/sys",
+        "version": "v0.43.0"
+      },
+      {
+        "id": "77280ae75efa0c42",
+        "type": "dependency",
+        "label": "golang.org/x/text",
+        "version": "v0.36.0"
+      },
+      {
+        "id": "614e0db2d7e1142b",
+        "type": "dependency",
+        "label": "golang.org/x/tools",
+        "version": "v0.44.0"
+      },
+      {
+        "id": "0ae32300785e164f",
+        "type": "module",
+        "label": "github.com/wso2/agent-manager/traces-observer-service"
+      },
+      {
+        "id": "3d116f7905e70d04",
+        "type": "dependency",
+        "label": "github.com/golang-jwt/jwt/v5",
+        "version": "v5.3.1"
+      }
+    ],
+    "edges": [
+      {
+        "from": "495aae3875058c96",
+        "to": "c1e5bc023fbb5fed",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "451895b7dd6dcc91",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "b2014de7597cd756",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "ffbe6b05b60deee4",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "f41bf178c80d897d",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "8b784f5751cf23ac",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "885bca094f76030a",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "fadb7fbc1c2cc857",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "3e7805f1c431ab27",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "e3d1b8d67b1eb197",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "525791e3060d7329",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "d197b30087d6d74f",
+        "relation": "direct",
+        "reason": "WebSocket support"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "162eecc2e1dfb208",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "2b0958a53c54fe1b",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "8b14592a1893fd94",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "3f072250814cf61a",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "6250ca933311f1f2",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "3d514945057ce775",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "ef7c300024a90d3a",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "cca88f06fe27c4bd",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "f6603c89e31d3346",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "e7324006d7c908ff",
+        "relation": "direct",
+        "reason": "Vault client"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "ebe262ff51197fb5",
+        "relation": "indirect",
+        "reason": "PostgreSQL driver"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "89fbc89538f62c2f",
+        "relation": "indirect",
+        "reason": "PostgreSQL driver"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "0bf1739ca3c4e3a8",
+        "relation": "direct",
+        "reason": "PostgreSQL driver"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "48261ec2a5ed86ae",
+        "relation": "indirect",
+        "reason": "PostgreSQL driver"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "3b426b37f56a769b",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "66a09261c6556d3c",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "8d26b89d45955ed5",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "93dd3702505f5e7c",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "4d4850697b8bba79",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "271949261fe8fa6f",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "d781fb0c2acd931d",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "88db485ab4ed72e5",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "108eec1c609bc7ae",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "c9ece6f8a2178d5a",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "3def82f35f22fde3",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "db2864673aec272d",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "005db060f0491bba",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "81e981cdccefecfa",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "789d537cbf03cb37",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "b75f44074730e8f2",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "ae000d1d3f7131d5",
+        "relation": "direct",
+        "reason": "Test assertions"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "f592c0e52eba0c45",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "25d9ee4951172e0c",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "d0a656d58e5871bc",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "3d50e804b92e3b0f",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "5e582e1bc90e8aa4",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "706de18805df1ec1",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "e36452aef34de4ce",
+        "relation": "indirect",
+        "reason": "OAuth 2.0"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "02dce6129348f16c",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "b79f795910355d1d",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "26ef594549bf4334",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "451dd8b0e13072aa",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "43df7dbd284085f8",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "7e09a7e9d736353a",
+        "relation": "direct"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "ac1703d72a97eaea",
+        "relation": "direct",
+        "reason": "ORM"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "25b3bc9542143eac",
+        "relation": "direct",
+        "reason": "ORM"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "b57dbac06bf2fc56",
+        "relation": "direct",
+        "reason": "Kubernetes client"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "ce2f031c8d8c21fa",
+        "relation": "indirect",
+        "reason": "Kubernetes client"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "0d9f40869e18a6b3",
+        "relation": "indirect",
+        "reason": "Kubernetes client"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "fa7b041842ef8fab",
+        "relation": "indirect",
+        "reason": "Kubernetes client"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "95c106b8e7d00407",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "29dd83f0421f0a13",
+        "relation": "indirect"
+      },
+      {
+        "from": "495aae3875058c96",
+        "to": "f86b458859302596",
+        "relation": "indirect"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "209cf1e43ecc4821",
+        "relation": "indirect"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "35650cef99a56df4",
+        "relation": "direct"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "8dde0505edfa6fff",
+        "relation": "indirect"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "07fb8c4b53e69241",
+        "relation": "direct"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "c1c8761dbeb0cd57",
+        "relation": "direct"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "de07d367e2e3f444",
+        "relation": "direct"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "d3a1c3a269c2554c",
+        "relation": "direct",
+        "reason": "OAuth 2.0"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "c752ca8cb8beb2f4",
+        "relation": "indirect"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "20477c897c05ec6f",
+        "relation": "direct"
+      },
+      {
+        "from": "5741b326d19f9a76",
+        "to": "cd54a5020c0fe2f1",
+        "relation": "direct"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "d81acb4a5ebde51f",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "167b4767cff6105c",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "726ae0846330da1a",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "1f7ca046a0ac7210",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "e21005c0a2952fa8",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "75e7cb1eb39302f6",
+        "relation": "direct"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "b8f024d6f2a1ff23",
+        "relation": "direct"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "d9282b384420143b",
+        "relation": "direct"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "7ac69b375edaa288",
+        "relation": "indirect",
+        "reason": "Test assertions"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "0d2f36cc9eb3e0fb",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "1c0416abaceddf92",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "4afeb0faa20db055",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "f884482f39d58d45",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "dbefeddda798f10a",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "77280ae75efa0c42",
+        "relation": "indirect"
+      },
+      {
+        "from": "cb195295f7b68222",
+        "to": "614e0db2d7e1142b",
+        "relation": "indirect"
+      },
+      {
+        "from": "0ae32300785e164f",
+        "to": "3d116f7905e70d04",
+        "relation": "direct"
+      }
+    ]
+  }
+}

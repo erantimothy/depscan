@@ -8,12 +8,17 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
+	"flag"
 	"fmt"
+	"io"
 	"log/slog"
 	"net/http"
 	"os"
 	"os/signal"
+	"path/filepath"
+	"strings"
 	"syscall"
 	"time"
 
@@ -42,6 +47,13 @@ func main() {
 // run() itself is now testable (call it from a test with a fake
 // listener/timeout), whereas a main() that calls os.Exit never is.
 func run() error {
+	if len(os.Args) > 1 {
+		handled, err := runCLI(os.Args[1:])
+		if handled {
+			return err
+		}
+	}
+
 	cfg, err := config.Load()
 	if err != nil {
 		return fmt.Errorf("loading config: %w", err)
@@ -121,4 +133,78 @@ func run() error {
 	}
 
 	return nil
+}
+
+// runCLI handles the local, HTTP-free scan command. With no command the
+// application continues to run its HTTP service for backwards compatibility.
+func runCLI(args []string) (bool, error) {
+	if args[0] != "scan" {
+		return false, nil
+	}
+
+	flags := flag.NewFlagSet("depscan scan", flag.ContinueOnError)
+	flags.SetOutput(os.Stderr)
+	rootFlag := flags.String("root", "", "repository or directory to scan")
+	output := flags.String("output", "", "write JSON to this file instead of stdout")
+	// Accept both `scan --output result.json /repo` and the more natural
+	// `scan /repo --output result.json` form. The standard flag package stops
+	// parsing at the first positional argument, so move a leading path after
+	// the flags before parsing.
+	scanArgs := args[1:]
+	if len(scanArgs) > 0 && !strings.HasPrefix(scanArgs[0], "-") {
+		scanArgs = append(scanArgs[1:], scanArgs[0])
+	}
+	if err := flags.Parse(scanArgs); err != nil {
+		if errors.Is(err, flag.ErrHelp) {
+			return true, nil
+		}
+		return true, err
+	}
+
+	root := *rootFlag
+	if root == "" && flags.NArg() == 1 {
+		root = flags.Arg(0)
+	}
+	if root == "" {
+		return true, errors.New("scan requires a repository path (for example: depscan scan /path/to/repo)")
+	}
+	if flags.NArg() > 1 || (*rootFlag != "" && flags.NArg() > 0) {
+		return true, errors.New("scan accepts only one repository path")
+	}
+
+	cfg, err := config.Load()
+	if err != nil {
+		return true, fmt.Errorf("loading config: %w", err)
+	}
+	parse := modfile.New()
+	result, err := scanner.New(parse, scanner.WithMaxWorkers(cfg.MaxScanWorkers)).Scan(context.Background(), root)
+	if err != nil {
+		return true, fmt.Errorf("scanning %s: %w", root, err)
+	}
+
+	var writer io.Writer = os.Stdout
+	var file *os.File
+	if *output != "" {
+		if dir := filepath.Dir(*output); dir != "." {
+			if err := os.MkdirAll(dir, 0o755); err != nil {
+				return true, fmt.Errorf("creating output directory: %w", err)
+			}
+		}
+		file, err = os.Create(*output)
+		if err != nil {
+			return true, fmt.Errorf("creating output file: %w", err)
+		}
+		defer file.Close()
+		writer = file
+	}
+
+	encoder := json.NewEncoder(writer)
+	encoder.SetIndent("", "  ")
+	if err := encoder.Encode(result); err != nil {
+		return true, fmt.Errorf("writing scan result: %w", err)
+	}
+	if *output != "" {
+		fmt.Fprintf(os.Stderr, "scan %s written to %s\n", result.ID, *output)
+	}
+	return true, nil
 }
