@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "prefix": "gorm.io/",
+      "category": "database",
+      "technology": "GORM",
+      "capability": "ORM",
+      "description": "Go ORM for relational databases"
+    },
+    {
+      "prefix": "github.com/go-gormigrate/gormigrate",
+      "category": "database",
+      "technology": "Gormigrate",
+      "capability": "Migration",
+      "description": "Database schema migrations"
+    },
+    {
+      "prefix": "github.com/jackc/",
+      "category": "database",
+      "technology": "PostgreSQL",
+      "capability": "Driver",
+      "description": "PostgreSQL driver/client"
+    },
+    {
+      "prefix": "github.com/lib/pq",
+      "category": "database",
+      "technology": "PostgreSQL",
+      "capability": "Driver",
+      "description": "PostgreSQL driver"
+    },
+    {
+      "prefix": "go.mongodb.org/",
+      "category": "database",
+      "technology": "MongoDB",
+      "capability": "Client",
+      "description": "MongoDB client"
+    },
+    {
+      "prefix": "k8s.io/",
+      "category": "kubernetes",
+      "technology": "Kubernetes",
+      "capability": "Client",
+      "description": "Kubernetes libraries"
+    },
+    {
+      "prefix": "sigs.k8s.io/",
+      "category": "kubernetes",
+      "technology": "Kubernetes SIG",
+      "capability": "Library",
+      "description": "Kubernetes SIG libraries"
+    },
+    {
+      "prefix": "github.com/hashicorp/vault",
+      "category": "security",
+      "technology": "HashiCorp Vault",
+      "capability": "Client",
+      "description": "Secrets management"
+    },
+    {
+      "prefix": "golang.org/x/oauth2",
+      "category": "auth",
+      "technology": "OAuth2",
+      "capability": "Protocol",
+      "description": "OAuth 2.0"
+    },
+    {
+      "prefix": "github.com/golang-jwt/jwt",
+      "category": "auth",
+      "technology": "JWT",
+      "capability": "Library",
+      "description": "JWT authentication"
+    },
+    {
+      "prefix": "golang.org/x/crypto",
+      "category": "security",
+      "technology": "Go Crypto",
+      "capability": "Library",
+      "description": "Cryptography"
+    },
+    {
+      "prefix": "github.com/gorilla/websocket",
+      "category": "websocket",
+      "technology": "WebSocket",
+      "capability": "Protocol",
+      "description": "WebSocket support"
+    },
+    {
+      "prefix": "google.golang.org/grpc",
+      "category": "rpc",
+      "technology": "gRPC",
+      "capability": "Framework",
+      "description": "gRPC framework"
+    },
+    {
+      "prefix": "github.com/oapi-codegen/",
+      "category": "api",
+      "technology": "OpenAPI",
+      "capability": "Codegen",
+      "description": "OpenAPI code generation"
+    },
+    {
+      "prefix": "github.com/modelcontextprotocol/",
+      "category": "ai",
+      "technology": "Model Context Protocol",
+      "capability": "SDK",
+      "description": "MCP SDK"
+    },
+    {
+      "prefix": "go.opentelemetry.io/",
+      "category": "telemetry",
+      "technology": "OpenTelemetry",
+      "capability": "Observability",
+      "description": "Telemetry"
+    },
+    {
+      "prefix": "github.com/spf13/viper",
+      "category": "configuration",
+      "technology": "Viper",
+      "capability": "Configuration",
+      "description": "Configuration"
+    },
+    {
+      "prefix": "github.com/joho/godotenv",
+      "category": "configuration",
+      "technology": ".env",
+      "capability": "Configuration",
+      "description": "Environment files"
+    },
+    {
+      "prefix": "github.com/spf13/cobra",
+      "category": "cli",
+      "technology": "Cobra",
+      "capability": "Framework",
+      "description": "CLI framework"
+    },
+    {
+      "prefix": "github.com/aws/aws-sdk-go-v2",
+      "category": "cloud",
+      "technology": "AWS",
+      "capability": "SDK",
+      "description": "AWS SDK v2"
+    },
+    {
+      "prefix": "github.com/stretchr/testify",
+      "category": "testing",
+      "technology": "Testify",
+      "capability": "Assertions",
+      "description": "Testing"
+    },
+    {
+      "prefix": "github.com/onsi/ginkgo",
+      "category": "testing",
+      "technology": "Ginkgo",
+      "capability": "Framework",
+      "description": "BDD testing"
+    },
+    {
+      "prefix": "github.com/onsi/gomega",
+      "category": "testing",
+      "technology": "Gomega",
+      "capability": "Assertions",
+      "description": "Matcher library"
+    },
+    {
+      "prefix": "github.com/google/wire",
+      "category": "di",
+      "technology": "Wire",
+      "capability": "Dependency Injection",
+      "description": "Compile-time DI"
+    },
+    {
+      "prefix": "github.com/google/uuid",
+      "category": "utility",
+      "technology": "UUID",
+      "capability": "Identifiers",
+      "description": "UUID generation"
+    }
+  ]
+}

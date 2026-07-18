@@ -4,6 +4,9 @@ package analysis
 import (
 	"crypto/sha256"
 	"encoding/hex"
+	"encoding/json"
+	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 
@@ -261,6 +264,10 @@ func sortedKeys[V any](m map[string]V) []string {
 }
 
 func classify(path string) (string, string, []string) {
+	rules, err := loadRules()
+	if err != nil {
+		return "", "", nil
+	}
 	for _, rule := range rules {
 		if strings.HasPrefix(path, rule.prefix) {
 			return rule.category, rule.reason, []string{rule.category}
@@ -270,12 +277,32 @@ func classify(path string) (string, string, []string) {
 }
 
 type rule struct{ prefix, category, reason string }
+type RuleSet struct {
+	Version int    `json:"version"`
+	Rules   []rule `json:"rules"`
+}
 
-var rules = []rule{
-	{"gorm.io/", "database", "ORM"}, {"github.com/jackc/", "database", "PostgreSQL driver"}, {"github.com/lib/pq", "database", "PostgreSQL driver"}, {"go.mongodb.org/", "database", "MongoDB client"},
-	{"k8s.io/", "kubernetes", "Kubernetes client"}, {"github.com/hashicorp/vault", "security", "Vault client"}, {"golang.org/x/oauth2", "auth", "OAuth 2.0"},
-	{"github.com/gorilla/websocket", "websocket", "WebSocket support"}, {"google.golang.org/grpc", "messaging", "gRPC"}, {"go.opentelemetry.io/", "telemetry", "OpenTelemetry"},
-	{"github.com/stretchr/testify", "testing", "Test assertions"}, {"github.com/spf13/viper", "configuration", "Configuration"}, {"cloud.google.com/go", "cloud", "Google Cloud"}, {"github.com/aws/aws-sdk-go", "cloud", "AWS SDK"},
+// var rules = []rule{
+// 	{"gorm.io/", "database", "ORM"}, {"github.com/jackc/", "database", "PostgreSQL driver"}, {"github.com/lib/pq", "database", "PostgreSQL driver"}, {"go.mongodb.org/", "database", "MongoDB client"},
+// 	{"k8s.io/", "kubernetes", "Kubernetes client"}, {"github.com/hashicorp/vault", "security", "Vault client"}, {"golang.org/x/oauth2", "auth", "OAuth 2.0"},
+// 	{"github.com/gorilla/websocket", "websocket", "WebSocket support"}, {"google.golang.org/grpc", "messaging", "gRPC"}, {"go.opentelemetry.io/", "telemetry", "OpenTelemetry"},
+// 	{"github.com/stretchr/testify", "testing", "Test assertions"}, {"github.com/spf13/viper", "configuration", "Configuration"}, {"cloud.google.com/go", "cloud", "Google Cloud"}, {"github.com/aws/aws-sdk-go", "cloud", "AWS SDK"},
+// }
+
+func loadRules() ([]rule, error) {
+	targetPath := filepath.Join("..", "..", "config", "dependency_rules.json")
+	file, err := os.ReadFile(targetPath)
+	if err != nil {
+		return nil, err
+	}
+
+	var rules RuleSet
+	err = json.Unmarshal(file, &rules)
+	if err != nil {
+		return nil, err
+	}
+
+	return rules.Rules, nil
 }
 
 func frameworkFor(path string) string {
